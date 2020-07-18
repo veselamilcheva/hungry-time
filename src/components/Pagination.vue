@@ -4,29 +4,29 @@
     <ul class="pagination">
       <li class="page-item first">
         <button class="page-link"  
-        @click="onClickFirstPage"
-        :disabled="isInFirstPage">First</button>
+          @click="onClickFirstPage"
+          :disabled="isInFirstPage">First</button>
       </li> 
       <li class="page-item previous">
         <button class="page-link"   
-        @click="onClickPreviousPage"
-        :disabled="isInFirstPage">Previous</button>
+          @click="onClickPreviousPage"
+          :disabled="isInFirstPage">Previous</button>
       </li> 
       <li class="page-item page-number" v-for="page in pages">
         <button class="page-link"
-        :class="{ active: isPageActive(page.name) }" 
-        @click="onClickPage(page.name)"
-        :disabled="page.isDisabled">{{ page.name }}</button>
+          :class="{ active: isPageActive(page.name) }" 
+          @click="onClickPage(page.name)"
+          :disabled="page.isDisabled">{{ page.name }}</button>
       </li>
       <li class="page-item next">
         <button class="page-link" 
-        @click="onClickNextPage"
-        :disabled="isInLastPage">Next</button>
+          @click="onClickNextPage"
+          :disabled="isInLastPage">Next</button>
       </li> 
       <li class="page-item last">
         <button class="page-link"  
-        @click="onClickLastPage"
-        :disabled="isInLastPage">Last</button>
+          @click="onClickLastPage"
+          :disabled="isInLastPage">Last</button>
       </li>
     </ul>
   </section>
@@ -55,14 +55,6 @@
         type: Number,
         required: true
       },
-    },
-    mounted () {
-
-    },
-    data () {
-      return {
-        
-      }
     },
     computed: {
       offset() {
@@ -127,7 +119,7 @@
         return this.currentPage === page;
       }
     }
-}
+  }
 </script>
 
 <style scoped lang="scss">
@@ -136,7 +128,6 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
-
   .pagination {
     display: inline-flex;
   }
@@ -168,7 +159,7 @@
     background-color: #fff;
     border-color: #dee2e6;
   }
-  .page-item .page-link.active  {
+  .page-item .page-link.active {
     color: #fff;
     background-color: #1183a8;
     border-color: #1183a8;

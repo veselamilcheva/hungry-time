@@ -39,7 +39,6 @@
          <span class="save">Save</span>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -51,26 +50,10 @@
   export default  {
     name: 'app-list-item',
     props: ["restaurant"],
-    mounted () {
-
-    },
-    data () {
-      return {
-
-      }
-    },
-    methods: {
-
-    },
-    computed: {
-
-    },
     components: {
       appRating: Rating
     }
-}
-
-
+  }
 </script>
 
 <style scoped lang="scss">

@@ -23,64 +23,44 @@
 </template>
 
 <script lang="js">
-
   export default  {
     name: 'app-header',
-    props: [],
-    mounted () {
-
-    },
-    data () {
-      return {
-
-      }
-    },
-    methods: {
-
-    },
-    computed: {
-
-    }
-}
-
-
+  }
 </script>
 
 <style scoped lang="scss">
-  .header {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #deebef;
+  padding: 0 40px;
+  background: #ffffff;
+  .navigation {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #DEEBEF;
-    padding: 0 40px;
-    background: #ffffff;
-    .navigation {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-    }
-    .navigation .nav a {
-      text-decoration: none;
-      cursor: pointer;
-      font-weight: 900;
-    }
-    .navigation .notification {
-      margin: 5px 20px 0 10px;
-    }    
+    justify-content: flex-end;
   }
-   @media only screen and (max-width: 1020px) {
-     .header {
-      padding: 5px;
-     }
-    .header .logo img {
-      width: 160px;
-    }
+  .navigation .nav a {
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 900;
   }
-  @media only screen and (max-width: 530px) {
-    .header .navigation .nav a {
-      font-size: 13px;
-    }
+  .navigation .notification {
+    margin: 5px 20px 0 10px;
   }
-
-
+}
+@media only screen and (max-width: 1020px) {
+  .header {
+    padding: 5px;
+  }
+  .header .logo img {
+    width: 160px;
+  }
+}
+@media only screen and (max-width: 530px) {
+  .header .navigation .nav a {
+    font-size: 13px;
+  }
+}
 </style>

@@ -4,7 +4,7 @@
      <div class="rating">
       <ul class="list">
         <li @click="rate(star)" v-for="star in maxStars" :class="{ 'active': star <= stars }" :key="star.stars" class="star">
-        <i :class="star <= stars ? 'fas fa-star' : 'far fa-star'"></i> 
+          <i :class="star <= stars ? 'fas fa-star' : 'far fa-star'"></i> 
         </li>
       </ul>
       <div v-if="hasCounter" class="info counter">
@@ -23,9 +23,6 @@
   export default  {
     name: 'app-rating',
     props: ['grade', 'maxStars', 'hasCounter'],
-    mounted () {
-
-    },
     data () {
       return {
         stars: this.grade
@@ -37,27 +34,22 @@
           this.stars = this.stars === star ? star - 1 : star;
         }
       }
-    },
-    computed: {
-
     }
-}
-
-
+  }
 </script>
 
 <style scoped lang="scss">
 .rating {
   display: flex;
   padding: 20px 0;
-  color: #1183A8;
+  color: #1183a8;
   background: #fff;
   .list {
     padding: 0;
     margin: 0 5px 0 0;
     &:hover {
       .star {
-        color: #1183A8;
+        color: #1183a8;
       }
     }
     .star {
@@ -74,7 +66,7 @@
         margin-left: 0;
       }
       &.active {
-        color: #1183A8;
+        color: #1183a8;
       }
     }
   }

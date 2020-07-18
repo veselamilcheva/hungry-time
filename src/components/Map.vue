@@ -14,17 +14,6 @@
   export default  {
     name: 'app-map',
     props: ['restaurants'],
-    mounted () {
-
-    },
-    data () {
-      return {
-       
-      }
-    },
-    methods: {
-
-    },
     computed: {
       getArrayMarkers() {
         return this.restaurants.map((restaurant) => {
@@ -41,18 +30,16 @@
     components: { 
       gmapsMap, gmapsMarker 
     }
-}
-
-
+  }
 </script>
 
 <style scoped lang="scss">
+.map {
+  height: 500px;
+}
+@media only screen and (max-width: 1350px) {
   .map {
-    height: 500px;
+    height: 200px;
   }
-  @media only screen and (max-width: 1350px) {
-    .map {
-      height: 200px;
-    }
-  }
+}
 </style>

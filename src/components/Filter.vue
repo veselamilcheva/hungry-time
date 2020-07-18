@@ -1,19 +1,19 @@
 <template lang="html">
 
   <section class="filter">
-      <dropdown
+    <dropdown
       :options="price"
       :selected="priceObject"
       v-on:updateOption="onSelectPrice"
-      ></dropdown>
-      <dropdown
+    ></dropdown>
+    <dropdown
       :options="distance"
       :selected="distanceObject"
-      ></dropdown>
-      <dropdown
+    ></dropdown>
+    <dropdown
       :options="rating"
       :selected="ratingObject"
-      ></dropdown>
+    ></dropdown>
   </section>
 
 </template>
@@ -72,43 +72,38 @@
         this.filterRestaurants(filterPayload);  
       }
     },
-    computed: {
-
-    },
     components: {
       'dropdown': dropdown
     }
 }
-
-
 </script>
 
 <style lang="scss">
+.filter {
+  margin-left: -10px;
+  display: flex;
+  .caret {
+    color: #1c8fb1 !important;
+    top: 12px !important;
+    right: 25px !important;
+  }
+  .dropdown-toggle {
+    border: 2px solid #1c8fb1 !important;
+    border-radius: 3px !important;
+    -webkit-box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
+    -moz-box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
+    box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
+    font-weight: 700 !important;
+    padding: 6px 16px !important;
+    min-width: 100px !important;
+    font-size: 18px !important;
+    background-image: none !important;
+  }
+}
+@media only screen and (max-width: 1020px) {
   .filter {
-    margin-left: -10px;
-    display: flex;
-    .caret {
-      color: #1C8FB1 !important;
-      top: 12px !important;
-      right: 25px !important;
-    }
-    .dropdown-toggle {
-      border: 2px solid #1C8FB1 !important;
-      border-radius: 3px !important;
-      -webkit-box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
-      -moz-box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
-      box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
-      font-weight: 700 !important;
-      padding: 6px 16px !important;
-      min-width: 100px !important;
-      font-size: 18px !important;
-      background-image: none !important;
-    }
+    justify-content: center;
+    margin: 0;
   }
-  @media only screen and (max-width: 1020px) {
-    .filter {
-      justify-content: center;
-      margin: 0;
-    }
-  }
+}
 </style>

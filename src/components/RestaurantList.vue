@@ -11,8 +11,8 @@
         :total-pages="totalPages"
         :per-page="perPage"
         :current-page="currentPage"
-        @pagechanged="onPageChange"
-      />
+        @pagechanged="onPageChange">
+      </pagination>
     </div>
     <div v-if="restaurants.length" class="map-wrap">
       <app-map :restaurants="restaurants"></app-map>
@@ -29,10 +29,6 @@
 
   export default  {
     name: 'app-restaurant-list',
-    props: [],
-    mounted () {
-
-    },
     methods: {
       ...mapActions([
         'getRestaurantsFromApi'
@@ -56,77 +52,75 @@
       appMap: AppMap,
       Pagination
     }
-}
-
-
+  }
 </script>
 
 <style scoped lang="scss">
+.restaurant-list {
+  display: flex;
+  margin-top: 26px;
+  align-items: flex-start;
+  .list-item-wrap {
+    width: 65%;
+  }
+  .map-wrap {
+    width: 35%;
+    padding-left: 20px;
+  }
+  .message-no-lists {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+@media only screen and (max-width: 1350px) {
   .restaurant-list {
-    display: flex;
-    margin-top: 26px;
-    align-items: flex-start;
-    .list-item-wrap { 
-      width: 65%;
+    flex-direction: column-reverse;
+    .list-item-wrap {
+      width: 100%;
     }
     .map-wrap {
-      width: 35%;
-      padding-left: 20px;
-    }
-    .message-no-lists {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 400;
+      width: 100%;
+      padding-left: 0;
+      margin-bottom: 30px;
     }
   }
-  @media only screen and (max-width: 1350px) {
-    .restaurant-list {
-      flex-direction: column-reverse;
-      .list-item-wrap { 
-        width: 100%;
-      }
-      .map-wrap {
-        width: 100%;
-        padding-left: 0;
-        margin-bottom: 30px;
-      }
-    }
+}
+@media only screen and (max-width: 1020px) {
+  .restaurant-list {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
   }
-  @media only screen and (max-width: 1020px) {
-    .restaurant-list {
-      flex-direction: column-reverse;
-      justify-content: center;
-      align-items: center;
-    }
-  }
+}
 
-  //animation
-  .slide-enter-active {
-    animation: slide-in 200ms ease-out forwards;
-  }
-  .slide-leave-active {
-    animation: slide-out 200ms ease-out forwards;
-  }
+//animation
+.slide-enter-active {
+  animation: slide-in 200ms ease-out forwards;
+}
+.slide-leave-active {
+  animation: slide-out 200ms ease-out forwards;
+}
 
-  @keyframes slide-in {
-    from {
-      transform: translateY(-30px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+@keyframes slide-in {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
   }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-  @keyframes slide-out {
-    from {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    to {
-      transform: translateY(-30px);
-      opacity: 0;
-    }
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+    opacity: 1;
   }
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
 </style>

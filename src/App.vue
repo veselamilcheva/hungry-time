@@ -1,4 +1,5 @@
 <template>
+
   <div id="app">
     <app-header></app-header>
     <app-notification></app-notification>
@@ -8,6 +9,7 @@
       <app-restaurant-list></app-restaurant-list>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -20,9 +22,6 @@ import { mapActions } from 'vuex';
 
 export default {
   name: "app",
-  data() {
-    return {};
-  },
   components: {
     appHeader: Header,
     appNotification: Notification,
@@ -53,18 +52,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #545454;
 }
-
 .container {
   margin: 0 auto;
   max-width: 1549px;
   padding: 0 60px;
 }
-
 h1,
 h2 {
   font-weight: normal;
 }
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -74,11 +70,9 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-
 a {
   color: #545454;
 }
-
 a:hover {
   color: #378daf;
 }

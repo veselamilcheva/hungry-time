@@ -21,10 +21,10 @@
         <input type="text" id="city" pattern="[A-Za-z\s]*" v-model="city" placeholder="City name">
         <div class="state">
           <dropdown
-          :options="arrayOfStates"
-          :selected="chosenState"
-          v-on:updateOption="setState"
-          ></dropdown>
+            :options="arrayOfStates"
+            :selected="chosenState"
+            v-on:updateOption="setState">
+          </dropdown>
         </div>
       </div>
       <button id="search" type="submit" :disabled="!zip && !name && !city && !chosenState.value">
@@ -46,10 +46,6 @@
   
   export default  {
     name: 'app-search',
-    props: [],
-    mounted () {
-
-    },
     data () {
       return {
         arrayOfStates: states,
@@ -89,9 +85,7 @@
         'totalEntries'
       ])
     }
-}
-
-
+  }
 </script>
 
 <style scoped lang="scss">
