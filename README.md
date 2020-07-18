@@ -4,6 +4,8 @@
 
 ## Build Setup
 
+Use node version v13.13.0
+
 ``` bash
 # install dependencies
 npm install
