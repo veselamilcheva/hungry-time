@@ -2,17 +2,19 @@
 
   <section class="filter">
     <dropdown
-      :options="price"
-      :selected="priceObject"
-      v-on:updateOption="onSelectPrice"
+      :options="priceOptions"
+      :selected="selectedPrice"
+      @updateOption="onSelectPrice"
     ></dropdown>
     <dropdown
-      :options="distance"
-      :selected="distanceObject"
+      :options="distanceOptions"
+      :selected="selectedDistance"
+      @updateOption="onSelectDistance"
     ></dropdown>
     <dropdown
-      :options="rating"
-      :selected="ratingObject"
+      :options="ratingOptions"
+      :selected="selectedRating"
+      @updateOption="onSelectRating"
     ></dropdown>
   </section>
 
@@ -30,31 +32,36 @@
     },
     data () {
       return {
-        rating: [
-          { name:"4,5 and up", value:'5' },
-          { name:"3,5 and up", value:'4' },
-          { name:"2,5 and up", value:'3' },
-          { name:"2,0 and up", value:'2' }
+        ratingOptions: [
+          { name: "Any Rating", value: null },
+          { name:"4 and up", value: 4 },
+          { name:"3 and up", value: 3 },
+          { name:"2 and up", value: 2 }
         ],
-        ratingObject: {
-          name: 'Rating',
+        selectedRating: {
+          name: 'Any Rating',
+          value: null,
         },
-        price: [
-          { name: "All Prices", value: null },
+        priceOptions: [
+          { name: "Any Price", value: null },
+          { name:"$", value: 1 },
           { name:"$$", value: 2 },
           { name:"$$$", value: 3 },
           { name:"$$$$", value: 4 }
         ],
-        priceObject: {
-          name: 'Price',
+        selectedPrice: {
+          name: 'Any Price',
+          value: null,
         },
-        distance: [
+        distanceOptions: [
+          { name: "Any Distance", value: null },
           { name:"5-10", value: 10 },
           { name:"10-20", value: 20 },
           { name:"20-30", value: 30 } 
         ],
-        distanceObject: {
-          name: 'Distance',
+        selectedDistance: {
+          name: 'Any Distance',
+          value: null,
         }
       }
     },
@@ -63,13 +70,27 @@
         'filterRestaurants'
       ]),
       onSelectPrice(selectedPrice) {
-        this.priceObject = selectedPrice;
+        this.selectedPrice = selectedPrice;
+        this.executeFilter();
+      },
 
+      onSelectDistance(selectedDistance) {
+        this.selectedDistance = selectedDistance;
+        this.executeFilter();
+      },
+
+      onSelectRating(selectedRating) {
+        this.selectedRating = selectedRating;
+        this.executeFilter();
+      },
+      executeFilter() {
         let filterPayload = {
-          price: selectedPrice.value
+          price: this.selectedPrice.value,
+          distance: this.selectedDistance.value,
+          rating: this.selectedRating.value,
         }
-        
-        this.filterRestaurants(filterPayload);  
+
+        this.filterRestaurants(filterPayload);
       }
     },
     components: {
@@ -95,7 +116,7 @@
     box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
     font-weight: 700 !important;
     padding: 6px 16px !important;
-    min-width: 100px !important;
+    min-width: 130px !important;
     font-size: 18px !important;
     background-image: none !important;
   }

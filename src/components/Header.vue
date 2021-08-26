@@ -7,8 +7,8 @@
     <div class="navigation">
       <div class="nav">
         <ul>
-          <li><a href="#"> My dashboard</a></li>
-          <li><a href="#"> Search</a></li>
+          <li><router-link to='/dashboard' exact-active-class="active">Dashboard</router-link></li>
+          <li><router-link to='/' exact-active-class="active">Search</router-link></li>
         </ul>
       </div>
       <div class="notification">
@@ -46,8 +46,14 @@
     cursor: pointer;
     font-weight: 900;
   }
+  .navigation .nav .active {
+    color: #378daf;
+  }
   .navigation .notification {
     margin: 5px 20px 0 10px;
+  }
+  .img-logo {
+    width: 180px;
   }
 }
 @media only screen and (max-width: 1020px) {

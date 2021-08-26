@@ -1,12 +1,10 @@
 <template>
 
-  <div id="app">
+  <div id="app-shell">
     <app-header></app-header>
     <app-notification></app-notification>
     <div class="container">
-      <app-search></app-search>
-      <app-filter></app-filter>
-      <app-restaurant-list></app-restaurant-list>
+      <router-view />
     </div>
   </div>
 
@@ -15,28 +13,13 @@
 <script>
 import Header from "./components/Header";
 import Notification from "./components/Notification";
-import Search from "./components/Search";
-import Filter from "./components/Filter";
-import RestaurantList from "./components/RestaurantList";
-import { mapActions } from 'vuex';
 
 export default {
   name: "app",
   components: {
     appHeader: Header,
     appNotification: Notification,
-    appSearch: Search,
-    appFilter: Filter,
-    appRestaurantList: RestaurantList
   },
-  created() {
-    this.getRestaurantsFromApi();  
-  },
-  methods: {
-    ...mapActions([
-      'getRestaurantsFromApi'
-    ]),
-  }
 };
 </script>
 
@@ -46,7 +29,7 @@ body {
   margin: 0;
   background: #f7f7f7;
 }
-#app {
+#app-shell {
   font-family: "Lato", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

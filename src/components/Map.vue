@@ -23,7 +23,7 @@
       getCenterMarker() {
         return  {
           center: { lat: this.restaurants[0].lat, lng: this.restaurants[0].lng },
-          zoom: 8,
+          zoom: 12,
         }
       }
     },
