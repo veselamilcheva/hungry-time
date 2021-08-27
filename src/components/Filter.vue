@@ -101,14 +101,17 @@
 
 <style lang="scss">
 .filter {
-  margin-left: -10px;
   display: flex;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
   .caret {
     color: #1c8fb1 !important;
-    top: 12px !important;
-    right: 25px !important;
+    top: 6px !important;
+    right: 12px !important;
   }
   .dropdown-toggle {
+    position: relative;
     border: 2px solid #1c8fb1 !important;
     border-radius: 3px !important;
     -webkit-box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
@@ -121,7 +124,7 @@
     background-image: none !important;
   }
 }
-@media only screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .filter {
     justify-content: center;
     margin: 0;

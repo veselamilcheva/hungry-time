@@ -39,6 +39,7 @@ body {
   margin: 0 auto;
   max-width: 1549px;
   padding: 0 60px;
+  margin-top: 40px;
 }
 h1,
 h2 {
@@ -86,7 +87,7 @@ a:hover {
   right: 20px !important;
   color: #858585 !important;
 }
-@media only screen and (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .container {
     padding: 0 20px;
   }

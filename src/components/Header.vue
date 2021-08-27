@@ -1,5 +1,4 @@
 <template lang="html">
-
   <section class="header">
     <div class="logo">
       <img class="img-logo" src="../assets/logo.png">
@@ -15,16 +14,29 @@
         <img src="../assets/notification-ico.png">
       </div>
       <div class="user">
-        <img src="../assets/user-ico.png">
-      </div>  
+        <Avatar/>
+      </div>
+    </div>
+    <div class="navigation-mobile">
+      <div class="notification">
+        <img src="../assets/notification-ico.png">
+      </div>
+      <MobileNav></MobileNav>
     </div>
   </section>
 
 </template>
 
 <script lang="js">
+  import Avatar from "./Avatar";
+  import MobileNav from "./MobileNav";
+
   export default  {
     name: 'app-header',
+    components: {
+      Avatar: Avatar,
+      MobileNav: MobileNav
+    }
   }
 </script>
 
@@ -34,12 +46,15 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #deebef;
-  padding: 0 40px;
+  padding: 10px 40px;
   background: #ffffff;
   .navigation {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
   .navigation .nav a {
     text-decoration: none;
@@ -55,8 +70,14 @@
   .img-logo {
     width: 180px;
   }
+  .navigation-mobile {
+    display: none;
+    @media screen and (max-width: 500px) {
+      display: flex;
+    }
+  }
 }
-@media only screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .header {
     padding: 5px;
   }
@@ -64,7 +85,7 @@
     width: 160px;
   }
 }
-@media only screen and (max-width: 530px) {
+@media screen and (max-width: 530px) {
   .header .navigation .nav a {
     font-size: 13px;
   }

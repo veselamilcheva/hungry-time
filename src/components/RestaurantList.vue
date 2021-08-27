@@ -73,7 +73,7 @@
     font-weight: 400;
   }
 }
-@media only screen and (max-width: 1350px) {
+@media screen and (max-width: 1350px) {
   .restaurant-list {
     flex-direction: column-reverse;
     .list-item-wrap {
@@ -86,7 +86,7 @@
     }
   }
 }
-@media only screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .restaurant-list {
     flex-direction: column-reverse;
     justify-content: center;

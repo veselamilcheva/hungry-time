@@ -2,16 +2,15 @@
 
   <section class="list-item">
     <div class="card">
-      <img class="restaurant-img" src="../assets/restaurant-ico.png">
+      <div class="img-cropper">
+        <img class="restaurant-img" :src="restaurant.image_url">
+      </div>
       <div class="restaurant-wrap">
         <div class="restaurant-name">{{ restaurant.name }}</div>
         <div class="restaurant-type">Restaurant Type</div>
         <div class="restaurant-location">
-          <img class="location-ico" src="../assets/location.png">&nbsp;
-          <div>0.68mi&nbsp;
-            <span class="divider">|</span>&nbsp;
-            {{ restaurant.address }}
-          </div>
+          <img class="location-ico" src="../assets/location.png">
+          <div>{{ restaurant.address }}, {{  restaurant.city }}, {{restaurant.state}}, {{restaurant.postal_code}}</div>
         </div>
         <div class="price-filter-wrap">
           <img src="../assets/dollar-ico-orange.png">
@@ -34,7 +33,7 @@
         </button>
         <div class="connect">
           <a href="#">See website</a> 
-          &nbsp;<span class="divider">|</span>&nbsp;
+          &nbsp;<span class="divider">|</span>
          <img class="heart-ico" src="../assets/heart-ico.png"> 
          <span class="save">Save</span>
         </div>
@@ -66,7 +65,7 @@
     display: flex;
     align-items: flex-start;
     border-radius: 10px;
-    padding: 10px 25px 15px 25px;
+    padding: 16px;
     -webkit-box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
     -moz-box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
     box-shadow: -1px 0px 5px 0px rgb(165, 165, 165);
@@ -74,17 +73,41 @@
   .restaurant-img {
     margin-right: 20px;
   }
+  .img-cropper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    margin-right: 16px;
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .restaurant-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
   .restaurant-wrap {
     display: flex;
     flex-direction: column;
     margin-right: auto;
-    max-width: 40%;
+    max-width: 30%;
   }
   .restaurant-name {
-    font-size: 26px;
+    font-size: 24px;
+    line-height: 1.2em;
     color: #525252;
     font-weight: 900;
-    padding-top: 10px;
+    margin-bottom: 8px;
   }
   .restaurant-type {
     color: #804d28;
@@ -94,8 +117,8 @@
   }
   .restaurant-location {
     display: flex;
-    align-items: center;
-    font-size: 18px;
+    align-items: flex-start;
+    font-size: 16px;
     font-weight: 700;
   }
   .divider {
@@ -107,6 +130,9 @@
   }
   .price-filter-wrap {
     margin-top: 15px;
+    img {
+      width: 18px;
+    }
   }
   .reservation-wrap {
     display: flex;
@@ -133,7 +159,7 @@
     margin-left: 8px;
   }
   .make-reserv {
-    padding: 9px;
+    margin-bottom: 8px;
     font-weight: 700;
     font-size: 18px;
   }
@@ -157,7 +183,7 @@
     transform: scaleX(-1);
   }
 }
-@media only screen and (max-width: 870px) {
+@media screen and (max-width: 870px) {
   .list-item {
     .card {
       flex-direction: column;

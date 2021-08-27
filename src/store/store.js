@@ -24,6 +24,7 @@ export default new Vuex.Store({
     price: null,
     distance: null,
     rating: null,
+    profileImage: null
   },
   mutations: {
     'SET_RESTAURANTS'(state, { restaurants, total_entries, current_page }) {
@@ -43,6 +44,9 @@ export default new Vuex.Store({
       state.distance = distance;
       state.rating = rating;
     },
+    'SET_PROFILE'(state, profileImage) {
+      state.profileImage = profileImage;
+    }
   },
   actions: {
     searchRestaurants({ commit, dispatch }, searchPayload) {
@@ -108,6 +112,9 @@ export default new Vuex.Store({
         total_entries: restaurants.length,
         current_page: page
       })
+    },
+    saveProfileImage({ commit }, profileImage) {
+      commit('SET_PROFILE', profileImage)
     }
   },
   getters: {

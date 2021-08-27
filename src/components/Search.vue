@@ -16,9 +16,11 @@
       <div class="seperator">
         or
       </div>
-      <div class="form-group">
-        <img class="ico" src="../assets/location-ico-blue.png">
-        <input type="text" id="city" pattern="[A-Za-z\s]*" v-model="city" placeholder="City name">
+      <div class="form-group city-name-box">
+        <div class="city">
+          <img class="ico" src="../assets/location-ico-blue.png">
+          <input type="text" id="city" pattern="[A-Za-z\s]*" v-model="city" placeholder="City name">
+         </div>
         <div class="state">
           <dropdown
             :options="arrayOfStates"
@@ -87,7 +89,18 @@
     }
   }
 </script>
-
+<style lang="scss">
+.state {
+  .dropdown-toggle {
+    max-width: 100%;
+    display: flex;
+    margin-right: 0;
+    @media screen and (max-width: 500px) {
+      margin-left: 46px;
+    }
+  }
+}
+</style>
 <style scoped lang="scss">
 .search-wrap {
   position: relative;
@@ -97,7 +110,6 @@
   align-items: center;
   background: #ffffff;
   border-radius: 2px;
-  margin-top: 90px;
   padding: 0;
   height: 50px;
   position: relative;
@@ -149,8 +161,16 @@
     font-weight: 400;
     color: #dbdbdb;
   }
-  #states {
-    margin-left: 30px;
+  .state {
+    width: 100%;
+    .btn-group {
+      width: 100%;
+    }
+    .dropdown-toggle {
+      width: 100%;
+      max-width: 100%;
+      display: flex;
+    }
   }
   button {
     border: none;
@@ -170,6 +190,18 @@
     opacity: 0.75;
     cursor: auto;
   }
+  .city-name-box {
+    display: flex;
+    @media screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+    .city {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+    }
+  }
 }
 .text-wrap {
   font-weight: 700;
@@ -179,7 +211,7 @@
   right: 0;
   margin-top: 15px;
 }
-@media only screen and (max-width: 1020px) {
+@media screen and (max-width: 1020px) {
   .search {
     flex-direction: column;
     height: auto;
@@ -197,7 +229,6 @@
   .text-wrap {
     font-weight: 700;
     font-size: 18px;
-    text-align: right;
     position: static;
     right: 0;
     margin-top: 0;

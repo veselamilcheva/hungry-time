@@ -41,7 +41,6 @@
 <style scoped lang="scss">
 .rating {
   display: flex;
-  padding: 20px 0;
   color: #1183a8;
   background: #fff;
   .list {
@@ -86,7 +85,7 @@
     margin: 2px;
   }
 }
-@media only screen and (max-width: 1040px) {
+@media screen and (max-width: 1040px) {
   .rating {
     padding: 10px;
   }

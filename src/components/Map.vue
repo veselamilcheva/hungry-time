@@ -37,7 +37,7 @@
 .map {
   height: 500px;
 }
-@media only screen and (max-width: 1350px) {
+@media screen and (max-width: 1350px) {
   .map {
     height: 200px;
   }
