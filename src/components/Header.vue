@@ -14,14 +14,14 @@
         <img src="../assets/notification-ico.png">
       </div>
       <div class="user">
-        <Avatar/>
+        <app-avatar/>
       </div>
     </div>
     <div class="navigation-mobile">
       <div class="notification">
         <img src="../assets/notification-ico.png">
       </div>
-      <MobileNav></MobileNav>
+      <app-mobile-nav></app-mobile-nav>
     </div>
   </section>
 
@@ -34,8 +34,8 @@
   export default  {
     name: 'app-header',
     components: {
-      Avatar: Avatar,
-      MobileNav: MobileNav
+      appAvatar: Avatar,
+      appMobileNav: MobileNav
     }
   }
 </script>

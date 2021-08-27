@@ -8,7 +8,7 @@
         <span></span>
         <ul id="menu">
           <li>
-            <Avatar/>
+            <app-avatar/>
           </li>
           <li><router-link to='/dashboard' exact-active-class="active">Dashboard</router-link></li>
           <li><router-link to='/' exact-active-class="active">Search</router-link></li>
@@ -23,7 +23,7 @@ import Avatar from "./Avatar";
 export default  {
   name: 'app-mobile-nav',
   components: {
-    Avatar: Avatar,
+    appAvatar: Avatar,
   }
 }
 </script>
