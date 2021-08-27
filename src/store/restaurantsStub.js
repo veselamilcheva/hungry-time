@@ -13,7 +13,7 @@ export default [
         "price": 2,
         "rating": 4.8,
         "distance": 20,
-        "image_url": "https://lh5.googleusercontent.com/p/AF1QipO0PC9MHQ2AflpctfANUHxi6qj8Weigzw03_piK=w408-h240-k-no-pi-20-ya220-ro0-fo100"
+        "image_url": "/2017-08-29.jpeg"
     },
     {
         "id": 107258,
@@ -29,7 +29,7 @@ export default [
         "price": 1,
         "rating": 4,
         "distance": 10,
-        "image_url": "https://lh5.googleusercontent.com/p/AF1QipNEp9Q5hjvRPC5TqWarxQOPJmVttEro4g4NhRML=w408-h326-k-no"
+        "image_url": "/10-25-2019 ORION -153.jpeg"
     },
     {
         "id": 107259,
@@ -45,7 +45,7 @@ export default [
         "price": 1,
         "rating": 3.5,
         "distance": 30,
-        "image_url": "https://lh5.googleusercontent.com/p/AF1QipMBEz-aBnQZlNllyn0R3GK8Fuk-4-uOwcp5uv7i=w507-h240-k-no"
+        "image_url": "/2021-01-18.jpeg"
     },
     {
         "id": 107260,
@@ -61,7 +61,7 @@ export default [
         "price": 3,
         "rating": 5,
         "distance": 10,
-        "image_url": "https://lh5.googleusercontent.com/p/AF1QipOHyWdVUkzgRIdhR-JqJNuorm1PcLI7Mw2eQlBG=w408-h306-k-no"
+        "image_url": "/2019-09-27.jpeg"
     },
     {
         "id": 107261,
@@ -77,7 +77,7 @@ export default [
         "price": 4,
         "rating": 4,
         "distance": 20,
-        "image_url": "https://lh5.googleusercontent.com/p/AF1QipNlNFSCGsDg6apokmHgUcPmZuhlKpyuDlzX5xye=w426-h240-k-no"
+        "image_url": "/2021-01-15.png"
     },
     {
         "id": 107262,
@@ -93,7 +93,7 @@ export default [
         "price": 4,
         "rating": 3,
         "distance": 10,
-        "image_url": "https://lh5.googleusercontent.com/p/AF1QipMymFJdG0wBxVqG9-ZL-UW2hUhqZynbcBzdTFPe=w408-h306-k-no"
+        "image_url": "/2017-03-19.jpeg"
     },
     {
         "id": 107263,
@@ -109,6 +109,6 @@ export default [
         "price": 2,
         "rating": 3.5,
         "distance": 10,
-        "image_url": "https://lh5.googleusercontent.com/p/AF1QipNppPLCugF0qIfgxxKNeSYoB4f1arPKVeOHn-ZL=w426-h240-k-no"
+        "image_url": "/2017-11-17.jpeg"
     },
 ];

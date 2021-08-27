@@ -10,7 +10,7 @@
         <div class="restaurant-type">Restaurant Type</div>
         <div class="restaurant-location">
           <img class="location-ico" src="../assets/location.png">
-          <div>{{ restaurant.address }}, {{  restaurant.city }}, {{restaurant.state}}, {{restaurant.postal_code}}</div>
+          <div>{{ restaurant.address + ', ' + restaurant.city + ', ' + restaurant.state + ', ' + restaurant.postal_code }}</div>
         </div>
         <div class="price-filter-wrap">
           <img src="../assets/dollar-ico-orange.png">
