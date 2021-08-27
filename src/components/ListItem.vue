@@ -127,6 +127,12 @@
   }
   .location-ico {
     margin: 5px 10px 0 -5px;
+    @media screen and (max-width: 870px) {
+      margin: 0;
+      position: relative;
+      top: -5px;
+      left: 20px;
+    }
   }
   .price-filter-wrap {
     margin-top: 15px;
