@@ -23,7 +23,7 @@
          </div>
         <div class="state">
           <dropdown
-            :options="arrayOfStates"
+            :options="stateOptions"
             :selected="chosenState"
             v-on:updateOption="setState">
           </dropdown>
@@ -43,14 +43,14 @@
 
 <script lang="js">
   import dropdown from 'vue-dropdowns';
-  import { mapActions, mapState, mapGetters } from 'vuex';
-  import states from '../states';
+  import { mapActions, mapState } from 'vuex';
+  import { dropdownOptionsMixin } from "../mixins/dropdownOptionsMixins";
   
   export default  {
     name: 'app-search',
+    mixins: [dropdownOptionsMixin],
     data () {
       return {
-        arrayOfStates: states,
         chosenState: null,
         name: null,
         zip: null,
